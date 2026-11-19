@@ -15,13 +15,15 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+bot = ["aiogram>=3.13,<4", "python-dotenv>=1.0"]
 test = ["pytest>=7"]
 
 [project.scripts]
 flowgen = "flowgen.cli:main"
+flowgen-bot = "flowgen_bot.bot:main"
 
 [tool.setuptools]
-packages = ["flowgen"]
+packages = ["flowgen", "flowgen_bot"]
 
 [tool.setuptools.package-data]
 flowgen = ["data/*.json"]
