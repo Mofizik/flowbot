@@ -1,0 +1,59 @@
+{
+  "flowgen": 1,
+  "source": "examples/demo.cpp",
+  "name": "grade",
+  "params": [
+    "avg"
+  ],
+  "signature": "char grade(double avg)",
+  "is_main": false,
+  "line": 35,
+  "body": [
+    {
+      "type": "if",
+      "cond": "avg ≥ 90",
+      "yes": [
+        {
+          "type": "return",
+          "value": "'A'",
+          "line": 36
+        }
+      ],
+      "no": [
+        {
+          "type": "if",
+          "cond": "avg ≥ 75",
+          "yes": [
+            {
+              "type": "return",
+              "value": "'B'",
+              "line": 37
+            }
+          ],
+          "no": [
+            {
+              "type": "if",
+              "cond": "avg ≥ 60",
+              "yes": [
+                {
+                  "type": "return",
+                  "value": "'C'",
+                  "line": 38
+                }
+              ],
+              "no": [],
+              "line": 38
+            }
+          ],
+          "line": 37
+        }
+      ],
+      "line": 36
+    },
+    {
+      "type": "return",
+      "value": "'D'",
+      "line": 39
+    }
+  ]
+}

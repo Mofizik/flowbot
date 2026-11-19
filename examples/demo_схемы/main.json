@@ -1,0 +1,137 @@
+{
+  "flowgen": 1,
+  "source": "examples/demo.cpp",
+  "name": "main",
+  "params": [],
+  "signature": "int main()",
+  "is_main": true,
+  "line": 62,
+  "body": [
+    {
+      "type": "process",
+      "text": "Открыть \"report.txt\" (out)",
+      "line": 63
+    },
+    {
+      "type": "if",
+      "cond": "out открыт",
+      "yes": [],
+      "no": [
+        {
+          "type": "io",
+          "text": "Вывод «Не удалось создать report.txt»",
+          "line": 65
+        },
+        {
+          "type": "return",
+          "value": "1",
+          "line": 66
+        }
+      ],
+      "line": 64
+    },
+    {
+      "type": "loop",
+      "test": "pre",
+      "header": "k = 1, …, FILES",
+      "body": [
+        {
+          "type": "process",
+          "text": "name = \"data\" + to_string(k) + \".txt\"",
+          "line": 70
+        },
+        {
+          "type": "process",
+          "text": "Открыть name (in)",
+          "line": 71
+        },
+        {
+          "type": "if",
+          "cond": "in открыт",
+          "yes": [],
+          "no": [
+            {
+              "type": "io",
+              "text": "Вывод в out: «Нет файла», name",
+              "line": 73
+            },
+            {
+              "type": "continue",
+              "line": 74
+            }
+          ],
+          "line": 72
+        },
+        {
+          "type": "call",
+          "text": "n = read_numbers(in, a)",
+          "line": 76
+        },
+        {
+          "type": "if",
+          "cond": "n = 0",
+          "yes": [
+            {
+              "type": "io",
+              "text": "Вывод в out: «Файл», name, «пуст»",
+              "line": 78
+            },
+            {
+              "type": "continue",
+              "line": 79
+            }
+          ],
+          "no": [],
+          "line": 77
+        },
+        {
+          "type": "io",
+          "text": "Вывод в out: «Файл», name, «:», n, «чисел»",
+          "line": 81
+        },
+        {
+          "type": "call",
+          "text": "print_report(out, a, n)",
+          "line": 82
+        }
+      ],
+      "line": 69
+    },
+    {
+      "type": "loop",
+      "test": "post",
+      "header": "пока answer ≠ 0 и answer ≠ 1",
+      "body": [
+        {
+          "type": "io",
+          "text": "Вывод «Показать отчёт? (1 — да, 0 — нет):»",
+          "line": 86
+        },
+        {
+          "type": "io",
+          "text": "Ввод answer",
+          "line": 87
+        }
+      ],
+      "line": 85
+    },
+    {
+      "type": "if",
+      "cond": "answer = 1",
+      "yes": [
+        {
+          "type": "io",
+          "text": "Вывод «Отчёт записан в report.txt»",
+          "line": 90
+        }
+      ],
+      "no": [],
+      "line": 89
+    },
+    {
+      "type": "return",
+      "value": "0",
+      "line": 91
+    }
+  ]
+}

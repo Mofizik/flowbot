@@ -1,0 +1,82 @@
+{
+  "flowgen": 1,
+  "source": "examples/demo.cpp",
+  "name": "print_report",
+  "params": [
+    "out",
+    "a",
+    "n"
+  ],
+  "signature": "void print_report(ofstream& out, const double a[], int n)",
+  "is_main": false,
+  "line": 42,
+  "body": [
+    {
+      "type": "process",
+      "text": "sum = 0",
+      "line": 43
+    },
+    {
+      "type": "loop",
+      "test": "pre",
+      "header": "i = 0, …, n − 1",
+      "body": [
+        {
+          "type": "process",
+          "text": "sum = sum + a[i]",
+          "line": 45
+        }
+      ],
+      "line": 44
+    },
+    {
+      "type": "process",
+      "text": "avg = sum / n",
+      "line": 46
+    },
+    {
+      "type": "io",
+      "text": "Вывод в out: «Среднее:», avg",
+      "line": 47
+    },
+    {
+      "type": "switch",
+      "value": "grade(avg)",
+      "cases": [
+        {
+          "cond": "grade(avg) = 'A'",
+          "body": [
+            {
+              "type": "io",
+              "text": "Вывод в out: «Отлично»",
+              "line": 50
+            }
+          ]
+        },
+        {
+          "cond": "grade(avg) = 'B', 'C'",
+          "body": [
+            {
+              "type": "io",
+              "text": "Вывод в out: «Нормально»",
+              "line": 54
+            }
+          ]
+        }
+      ],
+      "line": 48,
+      "default": [
+        {
+          "type": "io",
+          "text": "Вывод в out: «Плохо»",
+          "line": 57
+        }
+      ]
+    },
+    {
+      "type": "io",
+      "text": "Вывод в out: «Максимум:», a[index_of_max(a, n)]",
+      "line": 59
+    }
+  ]
+}

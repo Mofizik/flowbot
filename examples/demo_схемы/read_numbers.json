@@ -1,0 +1,49 @@
+{
+  "flowgen": 1,
+  "source": "examples/demo.cpp",
+  "name": "read_numbers",
+  "params": [
+    "in",
+    "a"
+  ],
+  "signature": "int read_numbers(ifstream& in, double a[])",
+  "is_main": false,
+  "line": 13,
+  "body": [
+    {
+      "type": "process",
+      "text": "n = 0",
+      "line": 14
+    },
+    {
+      "type": "loop",
+      "test": "pre",
+      "header": "пока n < N и in >> x",
+      "body": [
+        {
+          "type": "if",
+          "cond": "x ≠ x",
+          "yes": [
+            {
+              "type": "continue",
+              "line": 17
+            }
+          ],
+          "no": [],
+          "line": 17
+        },
+        {
+          "type": "process",
+          "text": "a[n] = x; n = n + 1",
+          "line": 18
+        }
+      ],
+      "line": 16
+    },
+    {
+      "type": "return",
+      "value": "n",
+      "line": 21
+    }
+  ]
+}

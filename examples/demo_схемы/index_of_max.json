@@ -1,0 +1,45 @@
+{
+  "flowgen": 1,
+  "source": "examples/demo.cpp",
+  "name": "index_of_max",
+  "params": [
+    "a",
+    "n"
+  ],
+  "signature": "int index_of_max(const double a[], int n)",
+  "is_main": false,
+  "line": 25,
+  "body": [
+    {
+      "type": "process",
+      "text": "best = 0",
+      "line": 26
+    },
+    {
+      "type": "loop",
+      "test": "pre",
+      "header": "i = 1, …, n − 1",
+      "body": [
+        {
+          "type": "if",
+          "cond": "a[i] > a[best]",
+          "yes": [
+            {
+              "type": "process",
+              "text": "best = i",
+              "line": 29
+            }
+          ],
+          "no": [],
+          "line": 28
+        }
+      ],
+      "line": 27
+    },
+    {
+      "type": "return",
+      "value": "best",
+      "line": 31
+    }
+  ]
+}

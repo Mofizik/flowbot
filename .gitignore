@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+
+# секреты и данные бота: токен и база с кодом пользователей — никогда в git
+.env
+/data/
+*.sqlite3
+*.sqlite3-*
+
+# результаты flowgen (кроме примера)
+*_схемы/
+!examples/demo_схемы/
+
+# система
+.DS_Store
+.idea/
+.vscode/

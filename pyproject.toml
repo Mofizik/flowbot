@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flowgen"
+version = "1.0.0"
+description = "Автоматическое построение блок-схем (ГОСТ 19.701) по коду на C++"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "tree-sitter>=0.22",
+    "tree-sitter-cpp>=0.22",
+    "matplotlib>=3.6",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+flowgen = "flowgen.cli:main"
+
+[tool.setuptools]
+packages = ["flowgen"]
+
+[tool.setuptools.package-data]
+flowgen = ["data/*.json"]

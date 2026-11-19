@@ -1,0 +1,82 @@
+{
+  "operators": {
+    "!=": "≠", "<=": "≤", ">=": "≥",
+    "&&": "и", "||": "или", "!": "не ",
+    "and": "и", "or": "или", "not": "не ",
+    "-": "−"
+  },
+  "condition_operators": {"==": "="},
+  "unary_minus": "−",
+  "drop_namespaces": ["std"],
+
+  "statement_rewrites": {
+    "increment": "{x} = {x} + 1",
+    "decrement": "{x} = {x} − 1",
+    "+=": "{x} = {x} + {y}",
+    "-=": "{x} = {x} − {y}",
+    "*=": "{x} = {x} * {y}",
+    "/=": "{x} = {x} / {y}",
+    "%=": "{x} = {x} % {y}"
+  },
+
+  "console_output": ["cout", "cerr", "clog", "wcout", "wcerr", "wclog"],
+  "console_input": ["cin", "wcin"],
+  "stream_types": ["fstream", "ifstream", "ofstream", "istream", "ostream", "iostream",
+                   "stringstream", "istringstream", "ostringstream",
+                   "wfstream", "wifstream", "wofstream"],
+  "newline_manipulators": ["endl"],
+  "drop_manipulators": ["endl", "flush", "ends", "ws", "fixed", "scientific", "defaultfloat", "hexfloat",
+                        "left", "right", "internal", "boolalpha", "noboolalpha", "showpoint", "noshowpoint",
+                        "showpos", "noshowpos", "showbase", "noshowbase", "uppercase", "nouppercase",
+                        "hex", "dec", "oct", "skipws", "noskipws", "unitbuf", "nounitbuf"],
+  "drop_manipulator_calls": ["setw", "setprecision", "setfill", "setiosflags", "resetiosflags", "setbase"],
+
+  "quotes": ["«", "»"],
+  "max_string_chars": 40,
+  "max_io_chars": 90,
+  "max_init_items": 3,
+  "newline_item": "перевод строки",
+
+  "templates": {
+    "output": "Вывод {items}",
+    "output_to": "Вывод в {stream}: {items}",
+    "input": "Ввод {items}",
+    "input_from": "Ввод из {stream}: {items}",
+    "output_format": "Настройка вывода: {items}",
+    "output_format_to": "Настройка вывода в {stream}: {items}",
+    "input_ok": "Ввод успешен",
+    "for_range": "{var} = {start}, …, {end}",
+    "for_each": "для каждого {var} из {range}",
+    "while": "пока {cond}",
+    "do_while": "пока {cond}",
+    "infinite": "бесконечный цикл",
+    "switch_case": "{value} = {labels}",
+    "try_catch": "Исключение {param}",
+    "exit": "Конец",
+    "throw": "Исключение {value}"
+  },
+
+  "stream_methods": {
+    "open": "Открыть {0} ({obj})",
+    "close": "Закрыть {obj}",
+    "is_open": "{obj} открыт",
+    "eof": "конец файла {obj}"
+  },
+  "stream_constructors": {
+    "ifstream": "Открыть {0} ({name})",
+    "ofstream": "Открыть {0} ({name})",
+    "fstream": "Открыть {0} ({name})",
+    "wifstream": "Открыть {0} ({name})",
+    "wofstream": "Открыть {0} ({name})",
+    "wfstream": "Открыть {0} ({name})",
+    "istringstream": "{name} ← {args}",
+    "ostringstream": "{name} ← {args}",
+    "stringstream": "{name} ← {args}"
+  },
+
+  "ignore_calls": ["SetConsoleOutputCP", "SetConsoleCP", "setlocale"],
+  "constructor_declarations": true,
+  "strip_negation": true,
+  "merge": {"process": true, "io": true, "max_chars": 48, "max_items": 3},
+  "regex": []
+}

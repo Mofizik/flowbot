@@ -1,0 +1,51 @@
+{
+  "font": {
+    "family": ["Times New Roman", "Liberation Serif", "DejaVu Serif"],
+    "size": 11,
+    "label_size": 9.5,
+    "title_size": 12
+  },
+  "line_width": 1.0,
+  "line_spacing": 1.2,
+
+  "block": {"width": 2.6, "min_height": 0.42, "max_width": 3.8, "pad_x": 0.1, "pad_y": 0.07},
+  "cond": {"min_height": 0.5, "max_width": 4.6, "margin": 0.08},
+  "io_skew": 0.15,
+  "call_inset": 0.12,
+  "loop_cut": 0.13,
+
+  "spacing": {
+    "vertical": 0.2,
+    "after_cond": 0.28,
+    "arrow_min": 0.35,
+    "lane": 0.28,
+    "stub": 0.16
+  },
+  "connector_radius": 0.16,
+  "dot_radius": 0.032,
+  "arrow": {"enabled": true, "only_when_needed": false, "length": 0.1, "width": 0.07},
+  "margin": 0.25,
+
+  "page": {"width": 6.5, "height": 9.2},
+  "columns": {"mode": "auto", "max": 4, "gap": 0.6},
+  "layout": {"heavy_branch": 5},
+
+  "labels": {"yes": "да", "no": "нет"},
+  "terminals": {
+    "start_main": "Начало",
+    "end_main": "Конец",
+    "start": "Вход",
+    "end": "Выход",
+    "return_value": "Выход: {value}"
+  },
+  "loop": {
+    "start": "Ц{n}: {header}",
+    "end": "Ц{n}",
+    "post_start": "Ц{n}",
+    "post_end": "Ц{n}: {header}"
+  },
+  "title": {"show": false, "template": "{name}({params})"},
+  "connector_letters": "АБВГДЕЖИКЛМНПРСТУФХЦЧШЭЮЯ",
+
+  "output": {"dpi": 250, "svg_text_as_paths": true, "background": "white", "drawio_px_per_inch": 96}
+}
